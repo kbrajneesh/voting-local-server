@@ -1,0 +1,70 @@
+{% extends 'music/base_visitor.html' %}
+{% block title %}Log In{% endblock %}
+{% block login_active %}active{% endblock %}
+{% block style %}
+    input[type=text], select {
+    width: 100%;
+
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    input[type=password] {
+    width: 100%;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    }
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h2>Login</h2>
+        {% if error_message %}
+            <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        <form role="form" action="{% url 'music:login_user'%}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div >
+                <label for="id_username">
+                  <b>  Username:</b>
+                </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="id_username" maxlength="30" name="username" type="text">
+            </div><br>
+            <div >
+                <label for="id_password">
+                    <b>Password:</b>
+                </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="id_password" maxlength="30" name="password" type="password">
+            </div><br>
+                &nbsp;&nbsp;&nbsp;
+            <button type="submit" class="sbutton" value="Submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
+

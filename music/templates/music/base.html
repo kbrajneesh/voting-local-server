@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Competition 2.0</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="{% static 'music/js/main.js' %}"></script>
+
+    <style>  {% block style %}
+    {% endblock %}</style>
+</head>
+<body>
+
+<ul class="topnav">
+    <li class="navbar-brand "><a href="{% url 'music:index' %}">Competition 2.0</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn green">Round</a>
+        <div class="dropdown-content">
+
+            <a href="{% url 'music:round1' %}"> Round1</a>
+            <a href="{% url 'music:round2' %}"> Round2</a>
+            <a href="{% url 'music:round3' %}"> Round3</a>
+        </div>
+    </li>
+    <li class="dropdown right">
+        <a href="#" class="dropbtn">{{ user }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <div class="dropdown-content">
+            <a href="{% url 'music:logout_user' %}">&nbsp; Logout
+            </a>
+        </div>
+    </li>
+
+</ul>
+{% block body %}
+{% endblock %}
+</body>
+</html>

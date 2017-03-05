@@ -1,0 +1,32 @@
+{% extends 'music/base.html' %}
+{% block style %}
+    .button {
+    width: 60%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 20%;
+    cursor: pointer;
+}
+
+
+    {% endblock %}
+
+{% block body %}
+
+    <div >
+     <h1> <u>Vote </u></h1>
+
+        <div >
+             <a href="{% url 'music:round1' %}"><button type="button" class="sbutton button" >Round1</button></a>
+        </div>
+
+        <div >
+                <a href="{% url 'music:round2' %}"><button type="button" class="sbutton button" >Round2</button></a>
+        </div>
+
+        <div >
+                <a href="{% url 'music:round3' %}"><button type="button" class="sbutton button"  >Round3</button></a>
+        </div>
+</div>
+
+{% endblock %}
