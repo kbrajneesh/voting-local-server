@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Competition 2.0</title>
+    <title>Competition 1.0</title>
     {% load staticfiles %}
     <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
        <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <ul class="topnav">
-  <li class="navbar-brand"><a href="#">Competition 2.0</a></li>
+  <li class="navbar-brand"><a href="#">Competition 1.0</a></li>
                 <li class="{% block login_active %}{% endblock %}"><a href="{% url 'music:login_user' %}">Login</a></li>
 </ul>
 {% block body %}
