@@ -13,11 +13,7 @@ from django.template import RequestContext
 
 def logout_user(request):
     logout(request)
-    form = UserForm(request.POST or None)
-    context = {
-        "form": form,
-    }
-    return render(request, 'music/login.html', context)
+    return render(request, 'music/login.html')
 
 
 def login_user(request):
